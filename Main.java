@@ -1,28 +1,27 @@
-import javax.swing.JOptionPane;
+import javax.swing.*;
 import java.util.Scanner;
 public class Main {
-    public static void main(String[] args) {
-        motto();
-        pretTotal();
+    static int nrPersoane(){
+        System.out.println("Introduceti numarul de persoane care participa la eveniment:");
+        Scanner scanner=new Scanner(System.in);
+        int persoane= Integer.parseInt(scanner.next());
+        return persoane;
     }
-
-    public static int nrMinuteInchiriere() {
-        System.out.println("Introduceti cate minute doriti sa inchiriati echipamentul:");
-        Scanner sc = new Scanner(System.in);
-        int minute = sc.nextInt();
-        return minute;
-    }
-
     public static void motto() {
-        JOptionPane.showMessageDialog(null, "Sammy’s makes it fun in the sun");
+        JOptionPane.showMessageDialog(null, "„Carly’s makes the food that makes it a party.”.");
     }
+    public static void pretEv(){
+        int persoane=nrPersoane();
+        int pretOaspete=35;
+        int pretTotal= 35*persoane;
+        System.out.println("Pretul evenimentului este de:"+pretTotal +"dolari");
+    }
+    public static void main(String[] args) {
 
-    public static void pretTotal() {
-        int minute = nrMinuteInchiriere();
-        int ore=minute/60;
-        System.out.println("Echipamentul va fi inchiriat pentru "+minute+" minute");
-        System.out.println("Numarul minutelor suplimentare este de:"+(40*ore));
-        System.out.println("Numarul orelor de inchiriere este de:"+ore+" ore" +" \nPretul total de inchiriere cu minutele extra este de:"+(40*ore+1*minute));
+        int invitati=nrPersoane();
+        System.out.println("Numarul total de invitati este de :"+invitati);
+        motto();
+
 
 
     }
